@@ -1,15 +1,62 @@
 <!DOCTYPE html>
-<html lang="kr">    
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlgoKing</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AlgoKing - 동적 문제 목록</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>
-    <a href="#" id="home-link"> AlgoKing</a>
-    </h1>
-    <hr>
+<body class="bg-gray-900">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="flex justify-between items-center mb-8 pb-4 border-b border-gray-700">
+            <h1 class="text-3xl font-bold text-cyan-400">
+                <a href="#" id="home-link">👑 AlgoKing</a>
+            </h1>
+            <nav class="space-x-6">
+                <a href="#" id="problems-nav" class="text-gray-300 hover:text-cyan-400 transition-colors">문제</a>
+                <a href="#" id="community-nav" class="text-gray-300 hover:text-cyan-400 transition-colors">커뮤니티</a>
+                <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">랭킹</a>
+                <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">프로필</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- [뷰 1] 문제 목록 페이지 -->
+            <div id="problem-list-view">
+                <h2 class="text-2xl font-semibold text-white mb-6">문제 목록</h2>
+                
+                <!-- 문제 목록을 표시할 테이블 구조를 추가합니다. -->
+                <table class="w-full text-left text-gray-300">
+                    <thead class="bg-gray-700/50 text-gray-200">
+                        <tr>
+                            <th class="p-3">#</th>
+                            <th class="p-3">문제 제목</th>
+                            <th class="p-3">난이도</th>
+                        </tr>
+                    </thead>
+                    <!-- 자바스크립트가 이 tbody 안에 문제 목록을 채워넣을 것입니다. -->
+                    <tbody id="problem-list-body">
+                        <!-- 처음에는 비어있습니다. -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- [뷰 2] 커뮤니티 게시판 페이지 (초기에는 숨김) -->
+            <div id="community-list-view" class="hidden">
+                <!-- ... 커뮤니티 뷰 내용은 이전과 동일 ... -->
+                <h2 class="text-2xl font-semibold text-white mb-6">커뮤니티</h2>
+                <p>이곳에 커뮤니티 게시글 목록이 표시될 예정입니다.</p>
+            </div>
+        </main>
+        
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
